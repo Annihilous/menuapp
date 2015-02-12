@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Menus</h1>
+<%= link_to 'New Menu', new_menu_path %>
+
+<div class="row">
+    <% @menus.each do |menu| %>
+      <div class="col-md-4 well">
+        <h3><%= link_to menu.meal, menu %></h3>
+        <% menu.items.each do | i | %>
+          <p><strong><%= i.name %></strong>&nbsp;$<%= i.price %> </p>
+        <%end%>
+      </div>
+    <% end %>
+</div>
